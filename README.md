@@ -60,8 +60,7 @@ setIntegerField(long offset, int value)
 getIntegerField(long offset)
 ````
 
-Add then an implementation of `inc()` using the accessors.
-Correct the code of the constructor to use the setter.
+Change the implementation of `inc()` and of the constructor to use the accessors.
 
 6. To complete `OffHeapSimple`, we add the code below:
 
