@@ -33,7 +33,7 @@ In addition, override `toString` to return the value of `x`.
 
 We are now going to make Simple persistent with J-NVM.
 
-2.1 Copy the code of Simple.java into a new class named `OffHeapSimple`.
+3. Copy the code of Simple.java into a new class named `OffHeapSimple`.
 
 The layout (in persistent memory) for `OffHeapSimple` will be as follows:
 
@@ -46,12 +46,11 @@ The layout (in persistent memory) for `OffHeapSimple` will be as follows:
 */
 ````
 
-2.2 Define a `private static final array long[] offsets` that stores the offset of the unique field as defined above.
-
-2.3 Add a `private static final integer SIZE` to hold the size of an `OffHeapSimple` object in persistent memory.
+4. Define a `private static final array long[] offsets` that stores the offset of the unique field as defined above.
+In addition, add a `private static final integer SIZE` to hold the size of an `OffHeapSimple` object in persistent memory.
 The size of an integer in memory is given by the native `Integer.SIZE`.
 
-2.4 Remove the single attribute of `OffHeapSimple`.
+5. Remove the single attribute of `OffHeapSimple`.
 Change the logic in the setters and getters, to use direct access to the persistent memory.
 To this end, we will use the following methods provided by the parent class (OffHeapObjectHandle).
 
@@ -63,7 +62,7 @@ getLongField(int offset)
 Add then an implementation of `inc()` using the accessors.
 Correct the code of the constructor to use the setter.
 
-2.5 Complete your class by making it extend `OffHeapObjectHandle`.
+6. Complete your class by making it extend `OffHeapObjectHandle`.
 Then add the code below to your class.
 
 ````
@@ -92,7 +91,7 @@ Then add the code below to your class.
     }
 ````
 
-3. We are now ready to store/load `OffHeapSimple` instances to/from persistent memory.
+7. We are now ready to store/load `OffHeapSimple` instances to/from persistent memory.
 Add the following program to the `OffHeapSimple` class.
 
 ````
