@@ -48,7 +48,7 @@ The layout (in persistent memory) for `OffHeapSimple` will be as follows:
 
 4. Define a private static final array `long[] offsets` that stores the offset of the unique field as defined above.
 In addition, add a private static final integer `SIZE` to hold the size of an `OffHeapSimple` object in persistent memory.
-The size of an integer in memory is given by the native `Integer.SIZE`.
+The size of an integer in memory is given by the native `Integer.BYTES`.
 
 5. Remove the single attribute of `OffHeapSimple`.
 Change the logic in the setters and getters, to use direct access to the persistent memory.
