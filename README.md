@@ -50,20 +50,20 @@ The layout (in persistent memory) for `OffHeapSimple` will be as follows:
 In addition, add a private static final integer `SIZE` to hold the size of an `OffHeapSimple` object in persistent memory.
 The size of an integer in memory is given by the native `Integer.BYTES`.
 
-5. Remove the single attribute of `OffHeapSimple`.
+5. Make your class extend `OffHeapObjectHandle`.
+Remove the single attribute of `OffHeapSimple`.
 Change the logic in the setters and getters, to use direct access to the persistent memory.
-To this end, we will use the following methods provided by the parent class (OffHeapObjectHandle).
+To this end, we will use the following methods provided by the parent class (`OffHeapObjectHandle`).
 
 ````
-setLongField()
-getLongField(int offset)
+setIntegerField(long offset, int value)
+getIntegerField(long offset)
 ````
 
 Add then an implementation of `inc()` using the accessors.
 Correct the code of the constructor to use the setter.
 
-6. Complete your class by making it extend `OffHeapObjectHandle`.
-Then add the code below to your class.
+6. To complete `OffHeapSimple`, we add the code below:
 
 ````
     // resurrector
