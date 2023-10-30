@@ -13,7 +13,7 @@ These commands are to be executed from the root of the project.
 
 ````
 mvn install:install-file \
--Dfile=src/main/bin/jnvm-core-1.0-SNAPSHOT.jar \
+-Dfile=src/main/resources/jnvm-core-1.0-SNAPSHOT.jar \
 -DgroupId=eu.telecomsudparis.jnvm \
 -DartifactId=jnvm-core\
 -Dversion=1.0-SNAPSHOT \
