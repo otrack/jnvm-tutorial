@@ -65,7 +65,7 @@ Change the implementation of `inc()` and `toString()`, as well as of the constru
 6. To complete `OffHeapSimple`, we add the code below:
 
 ````
-	private static final long CLASS_ID = OffHeap.Klass.registerUserKlass(OffHeapSimple.class);
+    private static final long CLASS_ID = OffHeap.Klass.registerUserKlass(OffHeapSimple.class);
 
     // resurrector
     public OffHeapSimple(Void __unused, long offset){
