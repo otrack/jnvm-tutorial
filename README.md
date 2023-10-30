@@ -12,13 +12,7 @@ We also create a block on disk that serve to mimic persistent memory (PMEM).
 These commands are to be executed from the root of the project.
 
 ````
-mvn install:install-file \
--Dfile=src/main/resources/jnvm-core-1.0-SNAPSHOT.jar \
--DgroupId=eu.telecomsudparis.jnvm \
--DartifactId=jnvm-core\
--Dversion=1.0-SNAPSHOT \
--Dpackaging=jar \
--DgeneratePom=true
+mvn install:install-file -Dfile=src/main/resources/jnvm-core-1.0-SNAPSHOT.jar -DgroupId=eu.telecomsudparis.jnvm -DartifactId=jnvm-core -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true
 
 dd if=/dev/zero of=/tmp/pmem0 bs=1024 count=1024; sync
 ````
